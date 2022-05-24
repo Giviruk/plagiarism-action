@@ -3,7 +3,9 @@
 export GITHUB_ACCESS_TOKEN=${1}
 export REPOSITORY_NAME=${2}
 
-ls ./solutions/
+mkdir sherlock
+
+ls .
 # Compile sherlock.c file
 gcc -o sherlock sherlock.c
 chmod +x sherlock
