@@ -8,6 +8,7 @@ gcc -o sherlock /sherlock.c
 chmod +x sherlock
 ls ./
 # Run python script to download all pull requests
+rmdir ./solutions/
 python3 /main.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
 
 # Remove all not .cs files
