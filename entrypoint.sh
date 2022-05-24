@@ -12,12 +12,12 @@ rmdir solutions/
 python3 /main.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
 
 # Remove all not .cs files
-find solutions/ -not -name "*.cs" -type f -delete
+find ./solutions -not -name "*.cs" -type f -delete
 
 # Remove all ignored files
-find solutions/ -name "*Test.cs" -type f -delete
+find ./solutions -name "*Test.cs" -type f -delete
 
-for D in $(find /solutions -mindepth 1 -maxdepth 3 -type d)
+for D in $(find ./solutions -mindepth 1 -maxdepth 3 -type d)
 do
     # Make every subdirectory flatten
     find "${D}" -mindepth 3 -type f -print -exec mv {} "${D}" \;
