@@ -7,17 +7,17 @@ ls .
 # Compile sherlock.c file
 gcc -o /sherlock /sherlock.c
 chmod +x /sherlock
-
+ls .
 # Run python script to download all pull requests
-python3 ./download.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
+python3 /download.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
 
 # Remove all not .cs files
-find ./solutions/ -not -name "*.cs" -type f -delete
+find /solutions/ -not -name "*.cs" -type f -delete
 
 # Remove all ignored files
-find ./solutions/ -name "*Test.cs" -type f -delete
+find /solutions/ -name "*Test.cs" -type f -delete
 
-for D in $(find ./solutions -mindepth 1 -maxdepth 3 -type d)
+for D in $(find /solutions -mindepth 1 -maxdepth 3 -type d)
 do
     # Make every subdirectory flatten
     find "${D}" -mindepth 1 -type f -print -exec mv {} "${D}" \;
