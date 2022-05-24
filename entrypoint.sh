@@ -7,7 +7,7 @@ mkdir sherlock
 
 ls .
 # Compile sherlock.c file
-gcc -o sherlock sherlock.c
+gcc -o sherlock /sherlock.c
 chmod +x sherlock
 
 tree
