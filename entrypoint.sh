@@ -5,7 +5,7 @@ export REPOSITORY_NAME=${2}
 
 ls .
 # Compile sherlock.c file
-gcc -o /sherlock /sherlock.c
+gcc -o sherlock /sherlock.c
 chmod +x /sherlock
 ls .
 # Run python script to download all pull requests
