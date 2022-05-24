@@ -2,7 +2,7 @@
 
 export GITHUB_ACCESS_TOKEN=${1}
 export REPOSITORY_NAME=${2}
-
+ls
 # Compile sherlock.c file
 gcc sherlock.c -o sherlock
 chmod +x sherlock
@@ -12,7 +12,7 @@ tree
 # Run python script to download all pull requests
 python3 ./download.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
 
-# Remove all not .swift files
+# Remove all not .cs files
 find ./solutions/ -not -name "*.cs" -type f -delete
 
 # Remove all ignored files
