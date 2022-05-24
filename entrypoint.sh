@@ -7,7 +7,9 @@ ls .
 # Compile sherlock.c file
 gcc -o sherlock /sherlock.c
 chmod +x sherlock
-ls ../
+ls ../workspace
+ls ../file_commands
+ls ../workflow
 # Run python script to download all pull requests
 python3 /download.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
 
