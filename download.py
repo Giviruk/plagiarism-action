@@ -26,9 +26,10 @@ def download_pulls():
     for pr in pulls:
         branch = pr.head.ref
         directory = f"./solutions/{pr.user.login}"
-        login = "giviruk"
+        login = "Giviruk@gmail.com"
         password = "Trustme1*"
         remote = f"https://{login}:{password}@github.com/{REPOSITORY_NAME}.git"
+        printf(remote)
         Repo.clone_from(remote, directory, branch=branch)
 
 
