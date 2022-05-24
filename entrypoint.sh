@@ -3,21 +3,19 @@
 export GITHUB_ACCESS_TOKEN=${1}
 export REPOSITORY_NAME=${2}
 
-ls .
+ls ./
 # Compile sherlock.c file
 gcc -o sherlock /sherlock.c
 chmod +x sherlock
-ls ../workspace
-ls ../file_commands
-ls ../workflow
+ls ./
 # Run python script to download all pull requests
-python3 /download.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
+python3 ./download.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
 
 # Remove all not .cs files
-find /solutions/ -not -name "*.cs" -type f -delete
+find ./solutions/ -not -name "*.cs" -type f -delete
 
 # Remove all ignored files
-find /solutions/ -name "*Test.cs" -type f -delete
+find ./solutions/ -name "*Test.cs" -type f -delete
 
 for D in $(find /solutions -mindepth 1 -maxdepth 3 -type d)
 do
