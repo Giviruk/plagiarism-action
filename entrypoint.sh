@@ -6,10 +6,10 @@ export REPOSITORY_NAME=${2}
 ls .
 # Compile sherlock.c file
 gcc -o sherlock /sherlock.c
-chmod +x /sherlock
-ls .
+chmod +x sherlock
+ls ../
 # Run python script to download all pull requests
-python3 ./download.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
+python3 /download.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
 
 # Remove all not .cs files
 find /solutions/ -not -name "*.cs" -type f -delete
