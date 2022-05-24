@@ -21,7 +21,7 @@ find ./solutions/ -not -name "*.cs" -type f -delete
 # Remove all ignored files
 find ./solutions/ -name "*Test.cs" -type f -delete
 
-for D in $(find ./solutions -mindepth 1 -maxdepth 1 -type d)
+for D in $(find ./solutions -mindepth 1 -maxdepth 3 -type d)
 do
     # Make every subdirectory flatten
     find "${D}" -mindepth 1 -type f -print -exec mv {} "${D}" \;
