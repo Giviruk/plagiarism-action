@@ -4,7 +4,7 @@ export GITHUB_ACCESS_TOKEN=${1}
 export REPOSITORY_NAME=${2}
 
 # Compile sherlock.c file
-gcc -o sherlock sherlock.c
+gcc -o sherlock.c
 chmod +x sherlock
 
 tree
@@ -16,7 +16,7 @@ python3 ./download.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
 find ./solutions/ -not -name "*.cs" -type f -delete
 
 # Remove all ignored files
-find ./solutions/ -name "*Tests.cs" -type f -delete
+find ./solutions/ -name "*Test.cs" -type f -delete
 
 for D in $(find ./solutions -mindepth 1 -maxdepth 1 -type d)
 do
@@ -29,6 +29,6 @@ done
 mkdir outputs
 
 # Launch sherlock for solutions
-cd solutions ; ../sherlock *.cs $(echo ./*) > ../outputs/result.txt ; cd ..
+cd solutions ; ../sherlock -e cs $(echo ./*) > ../outputs/result.txt ; cd ..
 
 python3 ./parser.py
