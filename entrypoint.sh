@@ -3,10 +3,10 @@
 export GITHUB_ACCESS_TOKEN=${1}
 export REPOSITORY_NAME=${2}
 
-ls ./
+ls .
 # Compile sherlock.c file
-gcc -o ./sherlock ./sherlock.c
-chmod +x ./sherlock
+gcc -o /sherlock /sherlock.c
+chmod +x /sherlock
 
 # Run python script to download all pull requests
 python3 ./download.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
