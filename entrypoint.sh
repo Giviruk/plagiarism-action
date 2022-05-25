@@ -26,14 +26,15 @@ find ./solutions -name "*GlobalUsings*" -type f -delete
 for D in $(find ./solutions -mindepth 1 -maxdepth 10 -type d)
 do
     # Make every subdirectory flatten
-    find "${D}" -mindepth 5 -type f -print -exec mv {} "${D}" \;
+    find "${D}" -mindepth 1 -type f -print -exec mv {} "${D}" \;
     # Remove folders from solutions
-    find "${D}" -mindepth 5 -type d -exec rm -rf {} \;
+    find "${D}" -mindepth 1 -type d -exec rm -rf {} \;
 done
 
 mkdir outputs
 
 # Launch sherlock for solutions
 cd solutions ; ../sherlock -e .cs * $(echo ./*) > ../outputs/result.txt ; cd ..
+cd solutions ; ../sherlock -e .fs * $(echo ./*) > ../outputs/result.txt ; cd ..
 ls ./outputs
 python3 /parser.py
