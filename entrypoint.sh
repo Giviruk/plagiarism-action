@@ -7,7 +7,6 @@ export REPOSITORY_NAME=${2}
 gcc -o sherlock /sherlock.c
 chmod +x sherlock
 # Run python script to download all pull requests
-rmdir solutions/
 python3 /main.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
 
 # Remove all ignored files
@@ -35,6 +34,5 @@ mkdir outputs
 
 # Launch sherlock for solutions
 cd solutions ; ../sherlock -e .cs * $(echo ./*) > ../outputs/result.txt ; cd ..
-cd solutions ; ../sherlock -e .fs * $(echo ./*) > ../outputs/result.txt ; cd ..
 ls ./outputs
 python3 /parser.py
