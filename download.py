@@ -22,6 +22,7 @@ def download_pulls():
     solutions will contain only .cs files
     """
     pulls = repo.get_pulls(state='open', sort='created')
+    print(pulls)
 
     for pr in pulls:
         branch = pr.head.ref
