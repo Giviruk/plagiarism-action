@@ -32,6 +32,7 @@ def parse_plagiarism_result(path):
     report_dict = {}
 
     with open(path, 'r') as result_file:
+        print(result_file)
         lines = result_file.readlines()
         for line in lines:
             splited = line.replace('\n', '').split(';')
