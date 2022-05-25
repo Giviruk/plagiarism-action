@@ -14,14 +14,17 @@ python3 /main.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
 find ./solutions -not -name "*.cs" -type f -delete
 
 # Remove all ignored files
+find ./solutions -name "*.git*" -type f -delete
+
+# Remove all ignored files
 find ./solutions -name "*Tests.cs" -type f -delete
 
-for D in $(find ./solutions -mindepth 1 -maxdepth 3 -type d)
+for D in $(find ./solutions -mindepth 1 -maxdepth 5 -type d)
 do
     # Make every subdirectory flatten
-    find "${D}" -mindepth 3 -type f -print -exec mv {} "${D}" \;
+    find "${D}" -mindepth 5 -type f -print -exec mv {} "${D}" \;
     # Remove folders from solutions
-    find "${D}" -mindepth 3 -type d -exec rm -rf {} \;
+    find "${D}" -mindepth 5 -type d -exec rm -rf {} \;
 done
 
 mkdir outputs
