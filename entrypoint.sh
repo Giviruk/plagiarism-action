@@ -19,7 +19,9 @@ find ./solutions -name "*.git*" -type f -delete
 # Remove all ignored files
 find ./solutions -name "*Tests*.cs" -type f -delete
 
-find ./solutions -name "*AssemblyAttributes*.cs" -type f -delete
+find ./solutions -name "*Assembly*.cs" -type f -delete
+
+find ./solutions -name "*GlobalUsings*.cs" -type f -delete
 
 for D in $(find ./solutions -mindepth 1 -maxdepth 10 -type d)
 do
