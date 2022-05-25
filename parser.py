@@ -56,7 +56,14 @@ def parse_plagiarism_result(path):
 
 
 if __name__ == '__main__':
-    report = parse_plagiarism_result("./outputs/cs.txt") + parse_plagiarism_result("./outputs/fs.txt") 
+    cs = parse_plagiarism_result("./outputs/cs.txt")
+    fs = parse_plagiarism_result("./outputs/fs.txt")
+    for k, v in cs.items():
+    if k in fs:
+        fs[k].extend(v)
+    else:
+        fs[k] = v
+    print(c)
     print(report)
     keys = set()
     matrix = [[]]
