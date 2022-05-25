@@ -56,7 +56,7 @@ def parse_plagiarism_result(path):
 
 
 if __name__ == '__main__':
-    report = parse_plagiarism_result("./outputs/result.txt")
+    report = parse_plagiarism_result("./outputs/cs.txt") + parse_plagiarism_result("./outputs/fs.txt") 
     print(report)
     keys = set()
     matrix = [[]]
@@ -85,4 +85,4 @@ if __name__ == '__main__':
                               cmap='coolwarm')
 
         figure = heatmap.get_figure()
-        figure.savefig("./outputs/plot.png")
+        figure.savefig("./outputs/cs.png")

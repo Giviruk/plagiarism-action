@@ -33,7 +33,7 @@ done
 mkdir outputs
 
 # Launch sherlock for solutions
-cd solutions ; ../sherlock -e .cs * $(echo ./*) > ../outputs/result.txt ; cd ..
-cd solutions ; ../sherlock -e .fs * $(echo ./*) > ../outputs/result1.txt ; cd ..
+cd solutions ; ../sherlock -e .cs * $(echo ./*) > ../outputs/cs.txt ; cd ..
+cd solutions ; ../sherlock -e .fs * $(echo ./*) > ../outputs/fs.txt ; cd ..
 ls ./outputs
 python3 /parser.py
