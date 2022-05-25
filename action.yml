@@ -1,11 +1,11 @@
 name: 'Plagiarism checker'
-description: 'Detect plagiarism among pull requests solutions'
+description: 'Detect plagiarism'
 inputs:
   github-access-token:
     description: 'GitHub access token'
     required: true
   repository-name:
-    description: 'Name of repository. Example "username/repository"'
+    description: 'Name of repository"'
     required: true
 runs:
   using: 'docker'
