@@ -59,10 +59,10 @@ if __name__ == '__main__':
     cs = parse_plagiarism_result("./outputs/cs.txt")
     fs = parse_plagiarism_result("./outputs/fs.txt")
     for k, v in cs.items():
-    if k in fs:
-        fs[k].extend(v)
-    else:
-        fs[k] = v
+        if k in fs:
+            fs[k].extend(v)
+        else:
+            fs[k] = v
     print(c)
     print(report)
     keys = set()
