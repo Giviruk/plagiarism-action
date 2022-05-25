@@ -33,5 +33,5 @@ mkdir outputs
 
 # Launch sherlock for solutions
 cd solutions ; ../sherlock -e .cs * $(echo ./*) > ../outputs/result.txt ; cd ..
-ls ./
+ls ./outputs
 python3 /parser.py

@@ -55,7 +55,7 @@ def parse_plagiarism_result(path):
 
 
 if __name__ == '__main__':
-    report = parse_plagiarism_result("outputs/result.txt")
+    report = parse_plagiarism_result("./outputs/result.txt")
     print(report)
     keys = set()
     matrix = [[]]
