@@ -26,6 +26,7 @@ def download_pulls():
     for pr in pulls:
         branch = pr.head.ref
         directory = f"./solutions/{pr.user.login}"
+        print(pr.user.login)
         login = "Giviruk"
         password = "Trustme1*"
         remote = f"https://{login}:{password}@github.com/{REPOSITORY_NAME}.git"
