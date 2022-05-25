@@ -21,7 +21,7 @@ find ./solutions -name "*Tests*.cs" -type f -delete
 
 find ./solutions -name "*AssemblyAttributes*.cs" -type f -delete
 
-for D in $(find ./solutions -mindepth 1 -maxdepth 5 -type d)
+for D in $(find ./solutions -mindepth 1 -maxdepth 10 -type d)
 do
     # Make every subdirectory flatten
     find "${D}" -mindepth 5 -type f -print -exec mv {} "${D}" \;
