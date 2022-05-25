@@ -15,7 +15,7 @@ python3 /main.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
 find ./solutions -not -name "*.cs" -type f -delete
 
 # Remove all ignored files
-find ./solutions -name "*Test.cs" -type f -delete
+find ./solutions -name "*Tests.cs" -type f -delete
 
 for D in $(find ./solutions -mindepth 1 -maxdepth 3 -type d)
 do
