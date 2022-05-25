@@ -10,9 +10,6 @@ chmod +x sherlock
 rmdir solutions/
 python3 /main.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
 
-# Remove all not .cs files
-find ./solutions -not -name "*.cs" -type f -delete
-
 # Remove all ignored files
 find ./solutions -name "*.git*" -type f -delete
 
