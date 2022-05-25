@@ -38,9 +38,6 @@ def parse_plagiarism_result(path):
             splited = line.replace('\n', '').split(';')
             first_file, second_file, percentage = File(splited[0]), File(splited[1]), splited[2]
 
-            if first_file.author == second_file.author:
-                continue
-
             names = [first_file.author, second_file.author]
             names.sort()
             key = Authors_Key(names[0], names[1])
