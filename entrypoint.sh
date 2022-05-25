@@ -26,9 +26,9 @@ find ./solutions -name "*GlobalUsings*" -type f -delete
 for D in $(find ./solutions -mindepth 1 -maxdepth 10 -type d)
 do
     # Make every subdirectory flatten
-    find "${D}" -mindepth 1 -type f -print -exec mv {} "${D}" \;
+    find "${D}" -mindepth 10 -type f -print -exec mv {} "${D}" \;
     # Remove folders from solutions
-    find "${D}" -mindepth 1 -type d -exec rm -rf {} \;
+    find "${D}" -mindepth 10 -type d -exec rm -rf {} \;
 done
 
 mkdir outputs
