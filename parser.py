@@ -63,7 +63,7 @@ if __name__ == '__main__':
             fs[k].extend(v)
         else:
             fs[k] = v
-    print(c)
+    report = fs
     print(report)
     keys = set()
     matrix = [[]]
