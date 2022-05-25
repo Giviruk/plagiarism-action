@@ -84,4 +84,4 @@ if __name__ == '__main__':
                               cmap='coolwarm')
 
         figure = heatmap.get_figure()
-        figure.savefig("./outputs/plot.png")
+        figure.savefig("outputs/plot.png")
