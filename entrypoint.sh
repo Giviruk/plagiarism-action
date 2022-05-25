@@ -17,7 +17,9 @@ find ./solutions -not -name "*.cs" -type f -delete
 find ./solutions -name "*.git*" -type f -delete
 
 # Remove all ignored files
-find ./solutions -name "*Tests.cs" -type f -delete
+find ./solutions -name "*Tests*.cs" -type f -delete
+
+find ./solutions -name "*AssemblyAttributes*.cs" -type f -delete
 
 for D in $(find ./solutions -mindepth 1 -maxdepth 5 -type d)
 do
@@ -31,5 +33,5 @@ mkdir outputs
 
 # Launch sherlock for solutions
 cd solutions ; ../sherlock -e .cs * $(echo ./*) > ../outputs/result.txt ; cd ..
-ls /outputs
+ls ./outputs
 python3 /parser.py
