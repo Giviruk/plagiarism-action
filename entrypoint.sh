@@ -6,7 +6,6 @@ export REPOSITORY_NAME=${2}
 # Compile sherlock.c file
 gcc -o sherlock /sherlock.c
 chmod +x sherlock
-ls ./
 # Run python script to download all pull requests
 rmdir solutions/
 python3 /main.py "${GITHUB_ACCESS_TOKEN}" "${REPOSITORY_NAME}"
@@ -29,5 +28,5 @@ mkdir outputs
 
 # Launch sherlock for solutions
 cd solutions ; ../sherlock -e cs $(echo ./*) > ../outputs/result.txt ; cd ..
-
+ls /outputs
 python3 /parser.py
